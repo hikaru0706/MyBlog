@@ -16,6 +16,8 @@ Nullam id dolor id nibh ultricies vehicula ut id elit.
 Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum.
 Aenean lacinia bibendum nulla sed consectetur.
 
+:smile:
+
 ## Heading
 
 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
