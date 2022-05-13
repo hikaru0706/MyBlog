@@ -6,15 +6,16 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Header from './Header';
+import Header from '../Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import post1 from './blog-posts/blog-post.1.md';
-import post2 from './blog-posts/blog-post.2.md';
-import post3 from './blog-posts/blog-post.3.md';
+import {Routes,Route} from 'react-router-dom';
+import post1 from '../blog-posts/blog-post.1.md';
+import post2 from '../blog-posts/blog-post.2.md';
+import post3 from '../blog-posts/blog-post.3.md';
 
 const sections = [
   { title: 'Technology', url: '#' },
@@ -40,24 +41,74 @@ const mainFeaturedPost = {
 
 const featuredPosts = [
   {
-    title: 'Featured post',
+    title: '学生時代後輩女子のおしがま',
     date: 'Nov 12',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      '後輩女子の我慢を見た時のお話です',
     image: 'https://source.unsplash.com/random',
     imageLabel: 'Image Text',
   },
   {
-    title: 'Post title',
+    title: '後輩感想文',
     date: 'Nov 11',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      '我慢させられた後輩の感想文です',
     image: 'https://source.unsplash.com/random',
     imageLabel: 'Image Text',
   },
+  {
+    title: '元カノの我慢',
+    date: 'Nov 11',
+    description:
+      '元カノを我慢させたときのお話です',
+    image: 'https://source.unsplash.com/random',
+    imageLabel: 'Image Text',
+  },
+  {
+    title: '元カノとのおしがまセックス',
+    date: 'Nov 11',
+    description:
+      '元カノとおしがまセックスをしたときのお話です',
+    image: 'https://source.unsplash.com/random',
+    imageLabel: 'Image Text',
+  },
+  {
+    title: '元カノとのおしがまセックス',
+    date: 'Nov 11',
+    description:
+      '元カノとおしがまセックスをしたときのお話です',
+    image: 'https://source.unsplash.com/random',
+    imageLabel: 'Image Text',
+  },
+  {
+    title: '元カノとのおしがまセックス',
+    date: 'Nov 11',
+    description:
+      '元カノとおしがまセックスをしたときのお話です',
+    image: 'https://source.unsplash.com/random',
+    imageLabel: 'Image Text',
+  },
+  {
+    title: '元カノとのおしがまセックス',
+    date: 'Nov 11',
+    description:
+      '元カノとおしがまセックスをしたときのお話です',
+    image: 'https://source.unsplash.com/random',
+    imageLabel: 'Image Text',
+  },
+  {
+    title: '元カノとのおしがまセックス',
+    date: 'Nov 11',
+    description:
+      '元カノとおしがまセックスをしたときのお話です',
+    image: 'https://source.unsplash.com/random',
+    imageLabel: 'Image Text',
+  }, 
 ];
 
+
 const posts = [post1, post2, post3];
+
 
 const sidebar = {
   title: 'About',
@@ -79,6 +130,7 @@ const sidebar = {
   social: [
     { name: 'GitHub', icon: GitHubIcon },
     { name: 'Twitter', icon: TwitterIcon },
+
     { name: 'Facebook', icon: FacebookIcon },
   ],
 };
@@ -86,6 +138,21 @@ const sidebar = {
 const theme = createTheme();
 
 export default function Blog() {
+
+  const [postContent, setPostcontent] = React.useState('')
+  // const [isDark, setIsDark] = React.useState(true)
+
+  React.useEffect(() => {
+    import('../blog-posts/blog-post.1.md')
+      .then(res =>
+        fetch(res.default)
+          .then(response => response.text())
+          .then(response => setPostcontent(response))
+          .catch(err => console.log(err))
+      )
+  }, [])
+
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -99,7 +166,7 @@ export default function Blog() {
             ))}
           </Grid>
           <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="From the firehose" posts={posts} />
+            <Main title="From the firehose" posts={postContent} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
