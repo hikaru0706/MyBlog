@@ -19,17 +19,17 @@ export default function Main(props: MainProps) {
     <Grid
       item
       xs={12}
-      md={8}
+      md={12}
       sx={{
         '& .markdown': {
-          py: 2,
+          py: 0,
         },
       }}
     >
-      <Typography variant="h6" gutterBottom>
+      {/* <Typography variant="h6" gutterBottom>
         {title}
-      </Typography>
-      <Divider />
+      </Typography> */}
+      {/* <Divider /> */}
       {/* {posts.map((post) => ( */}
         <Markdown className="markdown" key={posts.substring(0, 40)}>
           {posts}

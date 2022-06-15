@@ -12,102 +12,29 @@ import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import {Routes,Route} from 'react-router-dom';
-import post1 from '../blog-posts/blog-post.1.md';
-import post2 from '../blog-posts/blog-post.2.md';
-import post3 from '../blog-posts/blog-post.3.md';
+import {BrowserRouter, Routes,Route} from 'react-router-dom';
+import Company from './Company';
+import Results from './Result';
+import Members from './Member';
+import Contact from './Contact';
 
 const sections = [
-  { title: 'Technology', url: '#' },
-  { title: 'Design', url: '#' },
-  { title: 'Culture', url: '#' },
-  { title: 'Business', url: '#' },
-  { title: 'Politics', url: '#' },
-  { title: 'Opinion', url: '#' },
-  { title: 'Science', url: '#' },
-  { title: 'Health', url: '#' },
-  { title: 'Style', url: '#' },
-  { title: 'Travel', url: '#' },
+  { title: 'About this company', url: 'company' },
+  { title: 'member', url: 'members' },
+  { title: 'results', url: 'results' },
+  { title: 'Contact', url: 'Contact' },
 ];
 
-const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
-  description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-  image: 'https://source.unsplash.com/random',
-  imageText: 'main image description',
-  linkText: 'Continue reading…',
-};
+// const mainFeaturedPost = {
+//   title: 'Title of a longer featured blog post',
+//   description:
+//     "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+//   image: 'https://source.unsplash.com/random',
+//   imageText: 'main image description',
+//   linkText: 'Continue reading…',
+// };
 
-const featuredPosts = [
-  {
-    title: '学生時代後輩女子のおしがま',
-    date: 'Nov 12',
-    description:
-      '後輩女子の我慢を見た時のお話です',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-  {
-    title: '後輩感想文',
-    date: 'Nov 11',
-    description:
-      '我慢させられた後輩の感想文です',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-  {
-    title: '元カノの我慢',
-    date: 'Nov 11',
-    description:
-      '元カノを我慢させたときのお話です',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-  {
-    title: '元カノとのおしがまセックス',
-    date: 'Nov 11',
-    description:
-      '元カノとおしがまセックスをしたときのお話です',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-  {
-    title: '元カノとのおしがまセックス',
-    date: 'Nov 11',
-    description:
-      '元カノとおしがまセックスをしたときのお話です',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-  {
-    title: '元カノとのおしがまセックス',
-    date: 'Nov 11',
-    description:
-      '元カノとおしがまセックスをしたときのお話です',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-  {
-    title: '元カノとのおしがまセックス',
-    date: 'Nov 11',
-    description:
-      '元カノとおしがまセックスをしたときのお話です',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-  {
-    title: '元カノとのおしがまセックス',
-    date: 'Nov 11',
-    description:
-      '元カノとおしがまセックスをしたときのお話です',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  }, 
-];
-
-
-const posts = [post1, post2, post3];
+// const posts = [post1, post2, post3];
 
 
 const sidebar = {
@@ -140,7 +67,6 @@ const theme = createTheme();
 export default function Blog() {
 
   const [postContent, setPostcontent] = React.useState('')
-  // const [isDark, setIsDark] = React.useState(true)
 
   React.useEffect(() => {
     import('../blog-posts/blog-post.1.md')
@@ -157,22 +83,31 @@ export default function Blog() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" sections={sections} />
+        <Header title="株式会社Voyager" sections={sections} />
         <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
+          {/* <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
             {featuredPosts.map((post) => (
               <FeaturedPost key={post.title} post={post} />
             ))}
-          </Grid>
+          </Grid> */}
           <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="From the firehose" posts={postContent} />
-            <Sidebar
+          <BrowserRouter>
+            <Routes>
+              <Route path={`/company`} element={< Company/>} />
+              <Route path={`/results`} element={<Results/>} />
+              <Route path={`/members`} element={<Members/>} />
+              <Route path={`/contact`} element={<Contact/>} />
+               
+            </Routes>
+          </BrowserRouter>
+            {/* <Main title="From the firehose" posts={postContent} /> */}
+            {/* <Sidebar
               title={sidebar.title}
               description={sidebar.description}
               archives={sidebar.archives}
               social={sidebar.social}
-            />
+            /> */}
           </Grid>
         </main>
       </Container>
