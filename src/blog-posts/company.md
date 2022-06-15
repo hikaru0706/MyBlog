@@ -1,6 +1,23 @@
-# Sample blog post
+# 事業案内
 
-_April 1, 2020 by [Olivier](/)_
+_Jun 1, 2022 by [Hikaru Miyashita](/members)_
+
+## **ソフトウェア開発**
+主にweb系のソフトウェア開発を業務委託で請け負っています。
+この企業LPも制作物の一つです。Reactにより作成されています。
+
+## **動画制作請負事業**
+動画制作を業務委託で請け負っています。
+
+## **動画制作企画事業**
+自身で企画し、動画制作を行い動画を販売しています。
+
+## **EC事業**
+EC事業者のプラットフォームを通して商品を販売しています
+
+<!-- 
+##　請負政策物事例
+①Front:React
 
 This blog post shows a few different types of content that are supported and styled with
 Material styles. Basic typography, images, and code are all supported.
@@ -45,4 +62,4 @@ Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a p
 1. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 1. Maecenas sed diam eget risus varius blandit sit amet non magna.
 
-Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
+Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis. -->

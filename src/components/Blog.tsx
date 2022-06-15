@@ -66,17 +66,17 @@ const theme = createTheme();
 
 export default function Blog() {
 
-  const [postContent, setPostcontent] = React.useState('')
+  // const [postContent, setPostcontent] = React.useState('')
 
-  React.useEffect(() => {
-    import('../blog-posts/blog-post.1.md')
-      .then(res =>
-        fetch(res.default)
-          .then(response => response.text())
-          .then(response => setPostcontent(response))
-          .catch(err => console.log(err))
-      )
-  }, [])
+  // React.useEffect(() => {
+  //   import('../blog-posts/blog-post.1.md')
+  //     .then(res =>
+  //       fetch(res.default)
+  //         .then(response => response.text())
+  //         .then(response => setPostcontent(response))
+  //         .catch(err => console.log(err))
+  //     )
+  // }, [])
 
 
   return (
@@ -112,8 +112,8 @@ export default function Blog() {
         </main>
       </Container>
       <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
+        title="Voyager"
+        description="we choose to go to the moon"
       />
     </ThemeProvider>
   );

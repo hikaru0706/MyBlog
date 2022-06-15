@@ -1,7 +1,7 @@
-import post1 from '../blog-posts/blog-post.3.md';
+import post1 from '../blog-posts/member.md';
 import * as React from 'react';
-import Main from './Main'
-
+import Main from './Main';
+// import CustomizedTables from './Table';
 
 export default function Member(){
 
@@ -9,7 +9,7 @@ export default function Member(){
     // const [isDark, setIsDark] = React.useState(true)
 
     React.useEffect(() => {
-    import('../blog-posts/blog-post.3.md')
+    import('../blog-posts/member.md')
         .then(res =>
         fetch(res.default)
             .then(response => response.text())
@@ -19,6 +19,9 @@ export default function Member(){
     }, [])
 
     return(
+        <>
         <Main title="From the firehose" posts={postContent} />
+        {/* <CustomizedTables/> */}
+        </>
     );
 }
