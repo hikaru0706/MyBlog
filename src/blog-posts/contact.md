@@ -6,5 +6,5 @@
 
 08040964526
 
-Hikaru Miyashita
+Hikaru Miyashita <br>
 宮下晃

@@ -21,18 +21,18 @@ import Contact from './Contact';
 const sections = [
   { title: 'About this company', url: 'company' },
   { title: 'member', url: 'members' },
-  { title: 'results', url: 'results' },
+  { title: 'blog', url: 'blog' },
   { title: 'Contact', url: 'Contact' },
 ];
 
-// const mainFeaturedPost = {
-//   title: 'Title of a longer featured blog post',
-//   description:
-//     "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-//   image: 'https://source.unsplash.com/random',
-//   imageText: 'main image description',
-//   linkText: 'Continue reading…',
-// };
+const mainFeaturedPost = {
+  title: 'Voyager',
+  description:
+    "voyager means 航海者 in Japanese. The Voyager is a space probe launched by NASA and completed a solar system grand tour. Originally I liked space myself, and when I became independent, I wanted to challenge a world I had never seen as a voyager, so I chose this company name",
+  image: 'https://source.unsplash.com/random',
+  imageText: 'main image description',
+  linkText: 'Continue reading…',
+};
 
 // const posts = [post1, post2, post3];
 
@@ -85,8 +85,8 @@ export default function Blog() {
       <Container maxWidth="lg">
         <Header title="株式会社Voyager" sections={sections} />
         <main>
-          {/* <MainFeaturedPost post={mainFeaturedPost} />
-          <Grid container spacing={4}>
+          <MainFeaturedPost post={mainFeaturedPost} />
+          {/* <Grid container spacing={4}>
             {featuredPosts.map((post) => (
               <FeaturedPost key={post.title} post={post} />
             ))}
